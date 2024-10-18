@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.wordle-board {
+  text-align: center;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#board div {
+  width: 60px;
+  height: 60px;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  border: 2px solid #000;
+}
+
+#guess-input {
+  font-size: 1.5em;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+#submit-guess {
+  padding: 10px 20px;
+  font-size: 1.2em;
+}
+
+#message {
+  font-size: 1.2em;
+  margin-top: 20px;
+}

@@ -5,7 +5,7 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #000000;
 }
 
 .wordle-board {
@@ -15,6 +15,7 @@ body {
 #board {
   display: grid;
   grid-template-columns: repeat(5, 60px);
+  align-items: center;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -26,8 +27,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ddd;
-  border: 2px solid #000;
+  background-color: #000;
+  border: 0px;
 }
 
 #guess-input {

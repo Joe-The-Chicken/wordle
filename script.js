@@ -3,10 +3,23 @@ const guessInput = document.getElementById("guess-input");
 const submitButton = document.getElementById("submit-guess");
 const messageDiv = document.getElementById("message");
 
-const targetWord = "apple"; // The word to guess
+let targetWord = "";
 const maxGuesses = 6;
 let currentGuess = "";
 let guessCount = 0;
+
+// Function to fetch random word from API
+async function fetchRandomWord() {
+  try {
+    const response = await fetch("https://random-word-api.herokuapp.com/word?length=5");
+    const data = await response.json();
+    targetWord = data[0].toLowerCase();
+    console.log(`Target word: ${targetWord}`); // For debugging purposes
+  } catch (error) {
+    console.error("Error fetching the word:", error);
+    targetWord = "apple"; // Fallback word if the API fails
+  }
+}
 
 function createBoard() {
   for (let i = 0; i < maxGuesses * 5; i++) {
@@ -52,6 +65,7 @@ function checkGuess() {
   }
 }
 
+// Event listeners for checking guesses
 submitButton.addEventListener("click", checkGuess);
 guessInput.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
@@ -59,4 +73,10 @@ guessInput.addEventListener("keyup", function (event) {
   }
 });
 
-createBoard();
+// Initialize the game
+async function initGame() {
+  await fetchRandomWord();
+  createBoard();
+}
+
+initGame();

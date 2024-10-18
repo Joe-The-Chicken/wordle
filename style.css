@@ -6,6 +6,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #000000;
+  color: #ffffff;
 }
 
 .wordle-board {
@@ -15,7 +16,6 @@ body {
 #board {
   display: grid;
   grid-template-columns: repeat(5, 60px);
-  align-items: center;
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  background-color: #333;
   border: 0px;
 }
 

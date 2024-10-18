@@ -1,4 +1,4 @@
 # wordle
 A JS Wordle Game
 
-Play the game [https://joe-the-chicken.github.io/wordle](here)
+Play the game [here](https://joe-the-chicken.github.io/wordle)
